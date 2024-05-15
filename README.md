@@ -19,6 +19,31 @@ To learn more and get started, visit https://tinytapeout.com.
 
 The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
 
+## Makerchip and/or TL-Verilog Projects
+
+Makerchip is an online IDE for digital circuit design supporting Verilog or TL-Verilog projects. This starting template provides a virtual environment for Tiny Tapeout simulations.
+
+- [starting template](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt06-tl-verilog-template%2Fmain%2Fsrc%2Ftt_um_template.tlv) (Ctrl-click for new tab) 
+- [calculator circuit example](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Fmakerchip_examples%2Fmain%2Ftiny_tapeout_examples%2Ftt_um_calculator.tlv#) (Ctrl-click for new tab)
+
+![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)
+
+This environment has been used in the course "ChipCraft: The Art of Chip Design". Course materials and student projects can be found in the [course repo](https://github.com/efabless/chipcraft---mest-course).
+
+### Makerchip/TL-Verilog Project Setup
+
+To use Makerchip and TL-Verilog for your project:
+
+1. Create your top-level Makerchip-compatible `.tlv` (TL-Verilog or Verilog) source file as a copy of [src/tt_um_template.tlv](src/tt_um_template.tlv).
+1. In this new file, specify your module name as `tt_um_<github-username>_<project-name>` using the settings at the top of the file.
+1. As you would for Verilog projects (above), edit `info.yaml`, `docs/info.md`, `src/Makefile`, and `tb.v`. For `.tlv` sources, these would reference the generated `.v` files, not the `.tlv` source.
+1. Add the generated `src/*.v` to `.gitignore` to avoid committing it/them.
+
+> [!NOTE]
+> In case of local build errors, note that the `Makefile` uses the cocotb Makefile which messes with the Python environment and
+> can break the SandPiper(TM) command that compiles the `.tlv` code. If you encounter Python environment errors, look for
+> the SandPiper command in the `make` output, and run it manually. Then run `make` (as a pre-check for testing via GitHub).
+
 ## Enable GitHub actions to build the results page
 
 - [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
