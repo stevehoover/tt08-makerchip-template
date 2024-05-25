@@ -7,7 +7,7 @@
    See the corresponding Git repository for build instructions.
    **/
    
-   use(m5-1.0)
+   use(m5-1.0)  // See M5 docs in Makerchip IDE Learn menu.
    
    // ---SETTINGS---
    var(my_design, tt_um_example)  /// Change tt_um_example to tt_um_<your-github-username>_<name-of-your-project>. (See README.md.)
@@ -18,7 +18,7 @@
                      ///   m5_if_defined_as(MAKERCHIP, 1, 0, 1): Debounce unless in Makerchip.
    // --------------
    
-   // If debouncing, a user's module is within a wrapper, so it has a different name.
+   // If debouncing, your top module is wrapped within a debouncing module, so it has a different name.
    var(user_module_name, m5_if(m5_debounce_inputs, my_design, m5_my_design))
    var(debounce_cnt, m5_if_defined_as(MAKERCHIP, 1, 8'h03, 8'hff))
 \SV
