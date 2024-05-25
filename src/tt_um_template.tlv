@@ -1,10 +1,10 @@
 \m5_TLV_version 1d: tl-x.org
 \m5
    /**
-   This template enables Tiny Tapeout modules to run in the Virtual FPGA Lab.
-   It is specifically for Tiny Tapeout designs only.
-   A different template should be used to develop Virtual FPGA Lab modules that are
-   compatible with Tiny Tapeout (and all other boards supported by the Virtual FPGA Lab boards).
+   This template is for developing Tiny Tapeout designs using Makerchip.
+   Verilog, SystemVerilog, and/or TL-Verilog can be used.
+   Use of Tiny Tapeout Demo Boards (as virtualized in the VIZ tab) is supported.
+   See the corresponding Git repository for build instructions.
    **/
    
    use(m5-1.0)
@@ -20,10 +20,10 @@
    
    // If debouncing, a user's module is within a wrapper, so it has a different name.
    var(user_module_name, m5_if(m5_debounce_inputs, my_design, m5_my_design))
-   var(debounce_cnt, m5_if_eq(m5_MAKERCHIP, 1, 8'h03, 8'hff))
+   var(debounce_cnt, m5_if_defined_as(MAKERCHIP, 1, 8'h03, 8'hff))
 \SV
    // Include Tiny Tapeout Lab.
-   m4_include_lib(['https://raw.githubusercontent.com/os-fpga/Virtual-FPGA-Lab/84e7c389a63b4fbb5483238146168ed4188d1b8b/tlv_lib/tiny_tapeout_lib.tlv'])
+   m4_include_lib(['https:/']['/raw.githubusercontent.com/os-fpga/Virtual-FPGA-Lab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlv_lib/tiny_tapeout_lib.tlv'])
 
    // Strict checking.
    `default_nettype none
@@ -34,7 +34,7 @@
    // ============================================
    // If you are using TL-Verilog for your design,
    // your TL-Verilog logic goes here.
-   // Also provide \viz_js here (for TL-Verilog or Verilog logic).
+   // Optionally, provide \viz_js here (for TL-Verilog or Verilog logic).
    // Tiny Tapeout inputs can be referenced as, e.g. *ui_in.
    // (Connect Tiny Tapeout outputs at the end of this template.)
    // ============================================
@@ -49,14 +49,11 @@
 // Modify the module contents to your needs.
 // ================================================
 
-// Include the Makerchip module only in Makerchip. (Only because Yosys chokes on $urandom.)
-m4_ifelse_block(m5_MAKERCHIP, 1, ['
-
 module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
    // Tiny tapeout I/O signals.
    logic [7:0] ui_in, uio_in, uo_out, uio_out, uio_oe;
    logic [31:0] r;
-   always @(posedge clk) r = $urandom();
+   always @(posedge clk) r = m5_if_defined_as(MAKERCHIP, 1, ['$urandom()'], ['0']);
    assign ui_in = r[7:0];
    assign uio_in = r[15:8];
    logic ena = 1'b0;
@@ -82,8 +79,6 @@ module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, outpu
    assign passed = cyc_cnt > 100;
    assign failed = 1'b0;
 endmodule
-
-'])   /// end Makerchip-only
 
 // Provide a wrapper module to debounce input signals if requested.
 m5_if(m5_debounce_inputs, ['m5_tt_top(m5_my_design)'])
@@ -118,7 +113,7 @@ module m5_user_module_name (
 \SV_plus
    
    // =========================================
-   // If you are using Verilog for your design,
+   // If you are using (System)Verilog for your design,
    // your Verilog logic goes here.
    // =========================================
    
@@ -127,8 +122,9 @@ module m5_user_module_name (
 
    // Connect Tiny Tapeout outputs.
    // Note that my_design will be under /fpga_pins/fpga.
-   assign uo_out = 8'b0;
-   assign uio_out = 8'b0;
-   assign uio_oe = 8'b0;
+   // Example *uo_out = /fpga_pins/fpga|my_pipe>>3$uo_out;
+   assign *uo_out = 8'b0;
+   assign *uio_out = 8'b0;
+   assign *uio_oe = 8'b0;
    
 endmodule
