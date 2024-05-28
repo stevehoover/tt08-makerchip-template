@@ -16,11 +16,14 @@ To learn more and get started, visit https://tinytapeout.com.
 
 ## Makerchip for Tiny Tapeout
 
-Makerchip is an online IDE for digital circuit design supporting Verilog or TL-Verilog development. This repository uses Makerchip libraries that provide virtual simulation for Tiny Tapeout projects.
+Makerchip is an online IDE for digital circuit design supporting Verilog or TL-Verilog development. The starting code template in this repository enables development for Tiny Tapeout with simulation in a virtual Tiny Tapeout environment.
 
 ![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)
 
 ## Prepare your Project
+
+> [!NOTE]
+> GitHub README links always open in the same tab by default. Use Ctrl-click below to open in a new tab.
 
 1. **Create:** While logged in to GitHub, visit [this template repository](https://github.com/stevehoover/tt07-tl-verilog-template) and "Use this template", then "Create a new repository".
 1. **Enable GitHub Pages** (for your new repo)**:** See [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part).
@@ -29,14 +32,15 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 
 ## Develop your Project
 
-1. **Open:** Ctrl-click here to [open src/project.tlv in Makerchip](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt07-tl-verilog-template%2Fmakerchip%2Fsrc%2Fproject.tlv) and use the "Project" menu to save your file, or clone this repository and open `src/project.tlv` from [a fresh Makerchip session](https://makerchip.com). Makerchip projects are currently limited to this single source file plus any TL-Verilog libraries included via URL.
+1. **Open:** [Open the starting template (src/project.tlv) in Makerchip](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt07-tl-verilog-template%2Fmakerchip%2Fsrc%2Fproject.tlv) and use the "Project" menu to save your file, or clone this repository and open `src/project.tlv` from [a fresh Makerchip session](https://makerchip.com/sandbox). Makerchip projects are currently limited to this single source file plus any TL-Verilog libraries included via URL.
 1. **Configure:** Using settings near the top of the file, specify your project's top module name in the format `tt_um_<github-username>_<project-name>`.
-1. **Edit:** Code your Verilog and/or TL-Verilog where designated by code comments. (The "Learn" menu has resources for learning TL-Verilog. Prior Makerchip-based submissions are referenced under [Resources](#resources)).
+1. **Edit:** Code your Verilog and/or TL-Verilog where designated by code comments. (The "Learn" menu has resources for learning TL-Verilog. Prior Makerchip-based submissions are referenced below under [Resources](#resources)).
+1. **Verify:** Adapt the cocotb testbench to your design (see [test/README.md](test/README.md)) and/or verify your design in Makerchip by modifying the `top` module.
+1. **Build:** With every update in GitHub, GitHub Actions workflows automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/). Debug any failures in these workflows. View your layout to size your design appropriately.
 1. **Test:** Get yourself a [Demo Board](https://tinytapeout.com/guides/get-started-demoboard/). These are really cool! Your Makerchip designs will run on them.
-1. **Verify:** Adapt the cocotb testbench to your design (see [test/README.md](test/README.md)) and/or verify your design in Makerchip by modifying the `top` module. With every update in GitHub, GitHub Actions workflows automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/). Debug any failures in these workflows.
 
 > [!NOTE]
-> In case of local build errors, note that the `Makefile` uses the cocotb Makefile which messes with the Python environment and
+> You can run tests locally with `cd test; make`. In case of local build errors, note that the `Makefile` uses the cocotb Makefile which messes with the Python environment and
 > can break the SandPiper(TM) command that compiles the `.tlv` code. If you encounter Python environment errors, look for
 > the SandPiper command in the `make` output, and run it manually. Then run `make` (as a pre-check for testing via GitHub).
 
