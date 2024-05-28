@@ -32,7 +32,7 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 
 ## Develop your Project
 
-1. **Open:** [Open the starting template (src/project.tlv) in Makerchip](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt07-tl-verilog-template%2Fmakerchip%2Fsrc%2Fproject.tlv) and use the "Project" menu to save your file, or clone this repository and open `src/project.tlv` from [a fresh Makerchip session](https://makerchip.com/sandbox). Makerchip projects are currently limited to this single source file plus any TL-Verilog libraries included via URL.
+1. **Open:** [Open the starting template (src/project.tlv) in Makerchip](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt07-tl-verilog-template%2Fmain%2Fsrc%2Fproject.tlv) and use the "Project" menu to save your file, or clone this repository and open `src/project.tlv` from [a fresh Makerchip session](https://makerchip.com/sandbox). Makerchip projects are currently limited to this single source file plus any TL-Verilog libraries included via URL.
 1. **Configure:** Using settings near the top of the file, specify your project's top module name in the format `tt_um_<github-username>_<project-name>`.
 1. **Edit:** Code your Verilog and/or TL-Verilog where designated by code comments. (The "Learn" menu has resources for learning TL-Verilog. Prior Makerchip-based submissions are referenced below under [Resources](#resources)).
 1. **Verify:** Adapt the cocotb testbench to your design (see [test/README.md](test/README.md)) and/or verify your design in Makerchip by modifying the `top` module.
