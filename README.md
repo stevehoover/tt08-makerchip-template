@@ -20,7 +20,7 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 
 [![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)](https://youtu.be/afF3z4gzv9Y)
 
-[5-Min Start-to-Finish Screen Capture](https://youtu.be/afF3z4gzv9Y) demonstrating the development of a Verilog Tiny Tapeout project using Makerchip, starting in a new browser window and ending with a project submission.
+[5-Min Start-to-Finish Screen Capture](https://youtu.be/afF3z4gzv9Y) demonstrating the development of a Verilog Tiny Tapeout 7 project using Makerchip, starting in a new browser window and ending with a project submission.
 
 ## Prepare your Project
 
@@ -39,7 +39,7 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 1. **Edit:** Code your Verilog and/or TL-Verilog where designated by code comments. (The "Learn" menu has resources for learning TL-Verilog. Prior Makerchip-based submissions are referenced below under [Resources](#resources)).
 1. **Verify:** Adapt the cocotb testbench to your design (see [test/README.md](test/README.md)) and/or verify your design in Makerchip by modifying the `top` module.
 1. **Build:** With every update in GitHub, GitHub Actions workflows automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/). Debug any failures in these workflows. View your layout to size your design appropriately.
-1. **Test:** Get yourself a [Demo Board](https://tinytapeout.com/guides/get-started-demoboard/). These are really cool! Your Makerchip designs will run on them.
+1. **Test:** Optionally, get yourself a [Demo Board](https://tinytapeout.com/guides/get-started-demoboard/). These are really cool! [Use instructions with Makerchip and Wokwi](https://docs.google.com/document/d/e/2PACX-1vTCpb11-ZiFI2Xga6pHhZgTvN9GKuUFN9VTemRUJ-y3b5zR1dfbSRG_pTLokr0Cl9_lOpAwFZ21mowQ/pub) from [ChipCraft Course](https://github.com/efabless/chipcraft---mest-course).
 
 > [!NOTE]
 > You can run tests locally with `cd test; make`. In case of local build errors, note that the `Makefile` uses the cocotb Makefile which messes with the Python environment and
@@ -59,7 +59,7 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 - [Join the community](https://tinytapeout.com/discord)
 - [Build your design locally](https://docs.google.com/document/d/1aUUZ1jthRpg4QURIIyzlOaPWlmQzr-jBn3wZipVUPt4)
 - [Reference this calculator example](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Fmakerchip_examples%2Fmain%2Ftiny_tapeout_examples%2Ftt_um_calculator.tlv#)
-- [See other example designs](https://github.com/efabless/chipcraft---mest-course) created in the [ChipCraft Course](https://github.com/efabless/chipcraft---mest-course/blob/main/reference_designs/README.md)
+- See other [example designs](https://github.com/efabless/chipcraft---mest-course/blob/main/reference_designs/README.md) created in the [ChipCraft Course](https://github.com/efabless/chipcraft---mest-course)
 
 ## What next?
 
