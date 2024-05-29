@@ -16,7 +16,7 @@ To learn more and get started, visit https://tinytapeout.com.
 
 ## Makerchip for Tiny Tapeout
 
-Makerchip is an online IDE for digital circuit design supporting Verilog or TL-Verilog development. The starting code template in this repository enables development for Tiny Tapeout with simulation in a virtual Tiny Tapeout environment.
+Makerchip is an online IDE for digital circuit design supporting Verilog or [TL-Verilog](https://tl-x.org) development. The starting code template in this repository enables development for Tiny Tapeout with simulation in a [Virtual Tiny Tapeout Lab](https://github.com/os-fpga/Virtual-FPGA-Lab).
 
 [![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)](https://youtu.be/afF3z4gzv9Y)
 
@@ -60,6 +60,7 @@ Makerchip is an online IDE for digital circuit design supporting Verilog or TL-V
 - [Build your design locally](https://docs.google.com/document/d/1aUUZ1jthRpg4QURIIyzlOaPWlmQzr-jBn3wZipVUPt4)
 - [Reference this calculator example](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Fmakerchip_examples%2Fmain%2Ftiny_tapeout_examples%2Ftt_um_calculator.tlv#)
 - See other [example designs](https://github.com/efabless/chipcraft---mest-course/blob/main/reference_designs/README.md) created in the [ChipCraft Course](https://github.com/efabless/chipcraft---mest-course)
+- Learn TL-Verilog within the [Makerchip IDE](https://makerchip.com).
 
 ## What next?
 
