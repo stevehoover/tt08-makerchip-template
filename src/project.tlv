@@ -25,10 +25,6 @@
    // Include Tiny Tapeout Lab.
    m4_include_lib(['https:/']['/raw.githubusercontent.com/os-fpga/Virtual-FPGA-Lab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlv_lib/tiny_tapeout_lib.tlv'])
 
-   // Strict checking.
-   `default_nettype none
-
-
 \TLV my_design()
    
    // ============================================
