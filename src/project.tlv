@@ -123,4 +123,6 @@ module m5_user_module_name (
    assign *uio_out = 8'b0;
    assign *uio_oe = 8'b0;
    
+   // List all unused inputs to prevent warnings
+   wire _unused = &{ena, clk, rst_n, 1'b0};
 endmodule
