@@ -18,9 +18,9 @@ To learn more and get started, visit https://tinytapeout.com.
 
 Makerchip is an online IDE for digital circuit design supporting Verilog or [TL-Verilog](https://tl-x.org) development. The starting code template in this repository enables development for Tiny Tapeout with simulation in a [Virtual Tiny Tapeout Lab](https://github.com/os-fpga/Virtual-FPGA-Lab).
 
-[![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)](https://youtu.be/afF3z4gzv9Y)
+[![tt08-makerchip](https://github.com/stevehoover/tt08-makerchip-template/assets/11302288/0be4791c-28ee-4533-8543-29d9020e4851)](https://youtu.be/afF3z4gzv9Y)
 
-[5-Min Start-to-Finish Screen Capture](https://youtu.be/afF3z4gzv9Y) demonstrating the development of a Verilog Tiny Tapeout 7 project using Makerchip, starting in a new browser window and ending with a project submission.
+[5-Min Start-to-Finish Screen Capture](https://youtu.be/afF3z4gzv9Y) demonstrating the development of a Verilog Tiny Tapeout 8 project using Makerchip, starting in a new browser window and ending with a project submission.
 
 ## Prepare your Project
 
